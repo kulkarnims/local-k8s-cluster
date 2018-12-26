@@ -1,5 +1,5 @@
 {
-    "name": "example",
+    "name": "local",
     "description": "This is an example environment defined as JSON",
     "chef_type": "environment",
     "json_class": "Chef::Environment",
