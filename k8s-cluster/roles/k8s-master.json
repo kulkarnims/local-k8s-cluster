@@ -1,6 +1,6 @@
 {
-    "name": "example",
-    "description": "This is an example role defined as JSON",
+    "name": "k8s-master",
+    "description": "Kubernetes master",
     "chef_type": "role",
     "json_class": "Chef::Role",
     "default_attributes": {
