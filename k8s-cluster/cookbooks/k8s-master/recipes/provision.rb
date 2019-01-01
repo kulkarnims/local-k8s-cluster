@@ -17,19 +17,20 @@ options = {
     'vm.box' => 'ubuntu/xenial64',
     'vm.hostname' => 'k8s-master',
     'vm.network' => [
-      ':private_network, {ip: "192.168.50.1"}'
+      ':private_network, {ip: "192.168.56.3"}'
     ]
-  }#,
-  # `vagrant_config` gets appended to the Vagrantfile
-  #vagrant_config: <<EOF
-  #  config.vm.provider 'virtualbox' do |v|
-  #    v.memory = 4096
-  #    v.cpus = 4
-  #  end
-  #EOF
+  },
+
+  vagrant_config: <<-EOF
+    config.vm.provider 'virtualbox' do |v|
+      v.memory = 4096
+      v.cpus = 4
+    end
+  EOF
 }
 
 machine 'k8s-master' do
   machine_options options
+  role 'k8s-master'
   converge true
 end

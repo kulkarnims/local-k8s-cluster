@@ -6,6 +6,10 @@
 
 require 'chef/provisioning'
 
-machine 'k8s-master' do
-  action :destroy
+number_of_k8s_workers = 3
+
+1.upto(number_of_k8s_workers) do |i|
+  machine "k8s-worker-#{i}" do
+    action :destroy
+  end
 end
